@@ -7,3 +7,11 @@ export const record = async (req, res) => {
 
   res.exec();
 };
+
+export const get = (req, res) => {
+  req.statusCode = 200;
+  req.message = 'Successfully fetched ISS location';
+  req.operation = location.get();
+
+  res.exec();
+};

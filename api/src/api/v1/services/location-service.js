@@ -19,3 +19,5 @@ export const record = async () => {
 
   return Location.create(locationParams);
 };
+
+export const get = () => Location.find().sort({ _id: -1 }).limit(1);

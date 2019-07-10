@@ -22,6 +22,6 @@ export default () => {
   // TODO: this endpoint can be used in our cron job,
   // but we may choose not to expose it later on.
   router.get('/record', location.record);
-
+  router.get('/location', location.get);
   return router;
 };

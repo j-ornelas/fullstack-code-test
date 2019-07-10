@@ -9,6 +9,6 @@ const locationSchema = mongoose.Schema({
     longitude: String,
     latitude: String,
   },
-}, outputOptions);
+}, { ...outputOptions, capped: { size: 10240, max: 100 } });
 
 export default mongoose.model('Location', locationSchema);

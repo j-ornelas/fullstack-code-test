@@ -19,8 +19,8 @@ export default () => {
   router.post('/signup', user.signUp);
   router.post('/login', user.logIn);
 
-  // TODO: this endpoint can be used in our cron job,
-  // but we may choose not to expose it later on.
+  // record endpoint exists to force a fetch of the current ISS location.
+  // this is purely for demo purposes to avoid waiting for cron job.
   router.get('/record', location.record);
   router.get('/location', location.get);
   return router;

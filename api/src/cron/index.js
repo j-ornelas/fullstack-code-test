@@ -1,0 +1,1 @@
+export scheduleLocationFetch from './scheduleLocationFetch';

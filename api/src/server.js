@@ -7,6 +7,7 @@ import helmet from 'helmet';
 import * as config from './config';
 import { logger } from './util';
 import api from './api';
+import { scheduleLocationFetch } from './cron';
 
 const {
   db: { options },
@@ -43,6 +44,7 @@ export default (dbUrl) => {
   app.start = async () => {
     logger.info('Starting server...');
     const server = await app.listen(port);
+    scheduleLocationFetch();
     logger.success(`Server is listening on port ${port}`);
     return server;
   };
